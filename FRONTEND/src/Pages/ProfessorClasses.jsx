@@ -11,12 +11,7 @@ const ProfessorClasses = () => {
     //     console.log("you are not logged in");
     //     return (<></>)
     // }
-    const classes = [
-        { className: 'X-B Class'},
-        { className: 'X-B Class'},
-        { className: 'X-B Class'},
-        { className: 'X-B Class'},
-    ];
+    
 
     return (
         <div className="flex w-screen h-screen">
@@ -25,11 +20,6 @@ const ProfessorClasses = () => {
                 <Topbar />
                 <div className=''>
                     <FilterBar />
-                    <div className="m-6">
-                        {classes.map((classInfo, index) => (
-                            <ClassCard key={index} {...classInfo} />
-                        ))}
-                    </div>
                 </div>
             </div>
         </div>

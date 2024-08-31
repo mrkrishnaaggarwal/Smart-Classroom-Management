@@ -7,8 +7,14 @@ const ProfessorCurriculum = () => {
 //     return (<></>)
 // }
   return (
-    <div>
-      ProfessorCurriculum
+    <div className="flex w-screen h-screen">
+      <Sidebar />
+      <div className='w-[85%]'>
+        <Topbar />
+        <div className='flex'>
+          curriculm 
+        </div>
+      </div>
     </div>
   )
 }

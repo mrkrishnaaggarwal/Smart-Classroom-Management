@@ -1,8 +1,9 @@
 import React from 'react';
 
-const ClassCard = ({className}) => {
+const ClassCard = ({className,onClick}) => {
     return (
-        <div className="bg-white p-4 rounded-xl shadow-lg flex items-center justify-between mb-4">
+        
+        <div className="bg-white p-4 rounded-xl shadow-lg flex items-center justify-between mb-4 cursor-pointer" onClick={onClick}>
                 <div className="mr-4">
                     <h2 className="text-xl font-semibold">{className}</h2>
                 </div>
