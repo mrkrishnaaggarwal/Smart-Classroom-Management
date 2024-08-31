@@ -9,6 +9,7 @@ import TestCalender from '../Components/TestCalender';
 import StudentSidebar from '../Components/StudentSidebar';
 import Topbar from '../Components/Topbar';
 import {useState,useEffect} from 'react';
+import Class from '../Components/Class';
 const StudentDashboard  =  () => {
 
     // if(!localStorage.getItem("token")){
@@ -16,7 +17,7 @@ const StudentDashboard  =  () => {
     //     return (<></>)
     // }
     return (
-        <div className="flex w-screen h-screen">
+        <div className="flex w-screen h-screen overflow-x-hidden">
             <StudentSidebar />
             <div className='w-[85%]'>
                 <Topbar />
@@ -27,8 +28,8 @@ const StudentDashboard  =  () => {
                         <Overview />
                     </div>
                     <div className='w-4/12 ml-2'>
-                        <TestCalender />
-                        <Classe />
+                        <TestCalender/>
+                        <Class/>
                     </div>
                 </div>
             </div>

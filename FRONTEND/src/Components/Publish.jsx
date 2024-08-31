@@ -13,7 +13,7 @@ const Publish = ({ heading = "Publish Announcement"}) => {
     };
 
     return (
-        <div className="max-w-sm mx-auto  p-6 rounded-lg shadow-md border-2 border-neutral-200">
+        <div className="w-[80%] mx-auto p-4 my-2 rounded-lg shadow-md border-2 border-neutral-200 min-h-fit">
             <h2 className="text-lg font-semibold mb-4">{heading}</h2>
             
             <div className="mb-4">
