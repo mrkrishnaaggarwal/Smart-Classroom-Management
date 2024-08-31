@@ -28,18 +28,18 @@ const StatsCard = () => {
     fetchAttendance(); // Call the async function
   }, []);
   return (
-    <div className="grid grid-cols-3 gap-6 m-2 w-full">
-      <div className="bg-white p-6 rounded-lg shadow-md border-2 border-neutral-200">
+    <div className="grid grid-cols-2 gap-6 m-2 w-full">
+      {/* <div className="bg-white p-6 rounded-lg shadow-md border-2 border-neutral-200">
         <h3 className="text-lg font-semibold">Course Progress</h3>
         <p className="text-2xl font-bold">75%</p>
         <p className="text-sm text-gray-500">112 out of 150 classes</p>
-      </div>
+      </div> */}
       <div className="bg-white p-6 rounded-lg shadow-md border-2 border-neutral-200">
         <h3 className="text-lg font-semibold">Attendance Rate</h3>
         <p className="text-2xl font-bold">{attended}/{total}</p>
         <p className="text-2xl font-bold">{percent}%</p>
       </div>
-      <div className="bg-white p-6 rounded-lg shadow-md border-2 border-neutral-200">
+      <div className="bg-white p-6 rounded-lg shadow-md border-2 border-neutral-200 w-full">
         <h3 className="text-lg font-semibold">Exam Scores</h3>
         <p className="text-2xl font-bold">225/300</p>
       </div>

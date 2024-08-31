@@ -35,7 +35,7 @@ const TopbarLogin = () => {
   };
 
   return (
-    <div className="relative inline-block text-left ">
+    <div className="relative inline-block text-left">
       <div className="flex items-center space-x-3 cursor-pointer" onClick={toggleDropdown}>
       <img src={`data:image/jpeg;base64,${imageData}`} alt="User Profile" className='w-10 h-10 rounded-full border'/>
         {/* 2 lines of code were removed and one line above was added */}

@@ -1,21 +1,22 @@
 import React from 'react';
+import { FaDownload } from "react-icons/fa6";
 
 const SubjectCard = ({ subject }) => {
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg p-4 bg-white">
-      <img className="w-full" src={subject.image} alt={subject.name} />
-      <div className="px-6 py-4">
+    <div className="max-w-sm rounded-xl overflow-hidden shadow-lg bg-white border-2 border-neutral-200">
+      <img className="w-full h-1/2" src={subject.image} alt={subject.name} />
+      <div className="px-6 py-2">
         <div className="font-bold text-xl mb-2">{subject.name}</div>
-        <p className="text-gray-700 text-base">
+        <div className="text-gray-700 text-base">
           Assignment: {subject.assignment}
-        </p>
-        <p className="text-gray-700 text-base">
+        </div>
+        <div className="text-gray-700 text-base">
           Marks: {subject.marks}
-        </p>
+        </div>
       </div>
-      <div className="px-6 pt-4 pb-2">
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-          Download Resources
+      <div className="px-6 pb-2">
+        <button className="bg-white hover:bg-purple-600 hover:text-white text-purple-500 border border-purple-500 font-bold py-2 px-4 shadow-md flex items-center gap-2 rounded-lg">
+        <FaDownload />Download Resources
         </button>
       </div>
     </div>

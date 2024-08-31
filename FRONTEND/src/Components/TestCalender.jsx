@@ -21,7 +21,7 @@ const TestCalender = () => {
     );
   };
   return (
-      <div className="bg-white shadow-lg rounded-lg p-2 border-2 border-neutral-200">
+      <div className="bg-white shadow-lg rounded-lg p-2 border-2 border-neutral-200 ">
         <Calendar
           onChange={setDate}
           value={date}

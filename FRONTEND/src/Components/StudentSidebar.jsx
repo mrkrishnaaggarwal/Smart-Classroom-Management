@@ -8,6 +8,8 @@ import { CgProfile } from "react-icons/cg";
 import { IoSettingsOutline } from "react-icons/io5";
 import { IoLogOutOutline } from "react-icons/io5";
 import { IoHelpCircleOutline } from "react-icons/io5";
+import { GrAnnounce } from "react-icons/gr";
+import { MdOutlineQueryStats } from "react-icons/md";
 import logo from '../assets/logo.jpg';
 
 const StudentSidebar = () => {
@@ -31,7 +33,10 @@ const StudentSidebar = () => {
             <NavLink className={({ isActive }) => { return isActive ? "text-lg bg-neutral-200 px-2 py-1 rounded-lg text-[#6A2CFF] w-full flex items-center gap-2" : "text-lg hover:bg-gray-300 px-2 py-1 rounded-lg w-full flex items-center gap-2" }} to={"/Student/results"}><BsFileEarmarkText />Results</NavLink>
           </li>
           <li className="mb-2">
-            <NavLink className={({ isActive }) => { return isActive ? "text-lg bg-neutral-200 px-2 py-1 rounded-lg text-[#6A2CFF] w-full flex items-center gap-2" : "text-lg hover:bg-gray-300 px-2 py-1 rounded-lg w-full flex items-center gap-2" }} to={"/Student/announcements"}><BsFileEarmarkText />Announcements</NavLink>
+            <NavLink className={({ isActive }) => { return isActive ? "text-lg bg-neutral-200 px-2 py-1 rounded-lg text-[#6A2CFF] w-full flex items-center gap-2" : "text-lg hover:bg-gray-300 px-2 py-1 rounded-lg w-full flex items-center gap-2" }} to={"/Student/announcements"}><GrAnnounce />Announcements</NavLink>
+          </li>
+          <li className="mb-2">
+            <NavLink className={({ isActive }) => { return isActive ? "text-lg bg-neutral-200 px-2 py-1 rounded-lg text-[#6A2CFF] w-full flex items-center gap-2" : "text-lg hover:bg-gray-300 px-2 py-1 rounded-lg w-full flex items-center gap-2" }} to={"/Student/stats"}><MdOutlineQueryStats />Stats</NavLink>
           </li>
           <li className="mb-2">
             <NavLink className={({ isActive }) => { return isActive ? "text-lg bg-neutral-200 px-2 py-1 rounded-lg text-[#6A2CFF] w-full flex items-center gap-2" : "text-lg hover:bg-gray-300 px-2 py-1 rounded-lg w-full flex items-center gap-2" }} to={"/Student/myprofile"}><CgProfile />My Profile</NavLink>

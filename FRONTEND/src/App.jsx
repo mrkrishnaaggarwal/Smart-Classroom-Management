@@ -16,6 +16,7 @@ import StudentMyProfile from './Pages/StudentMyProfile';
 import ProfessorMyProfile from './Pages/ProfessorMyProfile';
 import ProfessorAttendance from './Pages/ProfessorAttendance';
 import StudentAnnouncements from './Pages/StudentAnnouncements';
+import StudentStats from './Pages/StudentStats';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
               <Route path="/Student/announcements" element={<StudentAnnouncements />} />
               <Route path="/Student/results" element={<StudentResults />} />
               <Route path="/Professor/Results" element={<ProfessorResults />} />
+              <Route path="/Student/stats" element={<StudentStats />} />
               <Route path="/Student/myprofile" element={<StudentMyProfile />} />
               <Route path="/Professor/myprofile" element={<ProfessorMyProfile />} />
               <Route path="/settings" element={<Settings />} />
