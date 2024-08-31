@@ -29,16 +29,25 @@ const UploadPhoto = () => {
         try {
             const base64Image = await convertToBase64(file);
             console.log(base64Image);
-            const response = await axios.post('http://localhost:3000/api/v1/professor.attendance', {
-                headers: {
-                    Authorization: "Bearer " + localStorage.getItem("token")
-                },
-                image: base64Image
-            }, {
+            // const response = await axios.post('http://localhost:3000/api/v1/professor/attendance', {
+            //     headers: {
+            //         Authorization: "Bearer " + localStorage.getItem("token")
+            //     },
+            //     image: base64Image
+            // }, 
+            // )
+            const response = await fetch('http://localhost:3000/api/v1/professor/attendance', {
+                method: 'POST',
                 headers: {
                     'Content-Type': 'application/json', // Ensure the content type is JSON
+                    'Authorization': `Bearer ` + localStorage.getItem("token")
                 },
+                body: JSON.stringify({
+                    image: base64Image
+                })
             });
+            const data = await response.json(); 
+            console.log(data);
 
             setUploadStatus('Upload successful!');
             // console.log('Upload successful!', response.data);

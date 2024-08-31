@@ -1,8 +1,30 @@
-import React, { useState } from 'react';
 import { FaChevronDown } from 'react-icons/fa';
-import imgSrc from '../assets/tanmay.jpg';
+import { useState,useEffect } from 'react';
+import axios from 'axios';
 const TopbarLogin = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [imageData, setImageData] = useState('');
+  const [name, setName] = useState('');
+
+  useEffect(() => {
+    const fetchImage = async () => {
+      try {
+        console.log(localStorage.getItem("token"));
+        const response = await axios.get('http://localhost:3000/api/v1/student/myprofile',{
+          headers :{
+            Authorization : "Bearer " + localStorage.getItem("token")
+          },
+        });
+        console.log(response);
+        setImageData(response.data.data.photograph);
+        setName(response.data.data.name);
+      } catch (error) {
+        console.error('Error fetching image:', error);
+      }
+    };
+
+    fetchImage();
+  }, []);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -15,12 +37,9 @@ const TopbarLogin = () => {
   return (
     <div className="relative inline-block text-left ">
       <div className="flex items-center space-x-3 cursor-pointer" onClick={toggleDropdown}>
-        <img
-          src={imgSrc}
-          alt="User Profile"
-          className="w-10 h-10 rounded-full object-cover"
-        />
-        <span className="text-black font-semibold">Anshuman</span>
+      <img src={`data:image/jpeg;base64,${imageData}`} alt="User Profile" className='w-10 h-10 rounded-full border'/>
+        {/* 2 lines of code were removed and one line above was added */}
+        <span className="text-black font-semibold">{name}</span>
         <FaChevronDown className="text-white w-10" />
       </div>
 
