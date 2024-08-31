@@ -31,7 +31,7 @@ const StudentSidebar = () => {
             <NavLink className={({ isActive }) => { return isActive ? "text-lg bg-neutral-200 px-2 py-1 rounded-lg text-[#6A2CFF] w-full flex items-center gap-2" : "text-lg hover:bg-gray-300 px-2 py-1 rounded-lg w-full flex items-center gap-2" }} to={"/Student/results"}><BsFileEarmarkText />Results</NavLink>
           </li>
           <li className="mb-2">
-            <NavLink className={({ isActive }) => { return isActive ? "text-lg bg-neutral-200 px-2 py-1 rounded-lg text-[#6A2CFF] w-full flex items-center gap-2" : "text-lg hover:bg-gray-300 px-2 py-1 rounded-lg w-full flex items-center gap-2" }} to={"/Student/profile"}><CgProfile />My Profile</NavLink>
+            <NavLink className={({ isActive }) => { return isActive ? "text-lg bg-neutral-200 px-2 py-1 rounded-lg text-[#6A2CFF] w-full flex items-center gap-2" : "text-lg hover:bg-gray-300 px-2 py-1 rounded-lg w-full flex items-center gap-2" }} to={"/myprofile"}><CgProfile />My Profile</NavLink>
           </li>
         </ul>
       </nav>

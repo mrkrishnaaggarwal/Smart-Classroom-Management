@@ -23,6 +23,10 @@ function App() {
               <Route path="/Professor/Classes" element={<ProfessorClasses />} />
               <Route path="/Student/results" element={<Results />} />
               <Route path="/Professor/Results" element={<ProfessorResults />} />
+              <Route path="/myprofile" element={<MyProfile />} />
+              <Route path="/setting" element={<Settings />} />
+              <Route path="/help" element={<Help />} />
+              <Route path="/logout" element={<Logout />} />
             </Routes>
       </Router>
     </>
