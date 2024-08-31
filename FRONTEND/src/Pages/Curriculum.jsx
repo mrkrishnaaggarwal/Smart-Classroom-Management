@@ -17,22 +17,22 @@ const subjects = [
     image: "https://th.bing.com/th/id/OIP.FHkyarijHWa-4OhEc8IalAHaEK?w=1920&h=1080&rs=1&pid=ImgDetMain",
   },
   {
-    name: "Chemistry",
-    assignment: "Calculus Practice Problems",
+    name: "Digital System Design",
+    assignment: "DSD Problems",
     marks: 100,
-    image: "https://th.bing.com/th/id/OIP.f32jWCFl2DKDewRumqPNjwHaEU?rs=1&pid=ImgDetMain",
+    image: "https://th.bing.com/th/id/OIP.R5b7tfIve3d_Cn23kaMM_QHaEK?rs=1&pid=ImgDetMain",
   },
   {
-    name: "Science",
-    assignment: "Calculus Practice Problems",
+    name: "JAVA",
+    assignment: "JAVA Problems",
     marks: 100,
-    image: "https://thumbs.dreamstime.com/b/science-chemistry-physics-biology-astronomy-education-subject-doodle-icon-doodle-presenation-title-school-91147329.jpg",
+    image: "https://wallpapercave.com/wp/wp6933338.jpg",
   },
   {
-    name: "Hindi",
-    assignment: "Calculus Practice Problems",
+    name: "DSA",
+    assignment: "DSA Problems",
     marks: 100,
-    image: "https://images.news18.com/ibnlive/uploads/2021/09/happy-hindi-diwas-16315868654x3.jpg?impolicy=website&width=640&height=480",
+    image: "https://i.ytimg.com/vi/Qmt0QwzEmh0/maxresdefault.jpg",
   },
   {
     name: "English",
@@ -49,7 +49,7 @@ const Curriculum = () => {
       <StudentSidebar />
       <div className='w-[85%]'>
         <Topbar />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4 h-[92%]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4 h-[92%] justify-items-center">
           {subjects.map((subject, index) => (
             <SubjectCard key={index} subject={subject} />
           ))}

@@ -8,6 +8,8 @@ import TestCalender from '../Components/TestCalender';
 import StudentSidebar from '../Components/StudentSidebar';
 import Topbar from '../Components/Topbar';
 
+
+
 const StudentDashboard = () => {
     const [profile, setProfile] = useState(null);
     if (!localStorage.getItem("token")) {
@@ -34,7 +36,7 @@ const StudentDashboard = () => {
     }, []);
 
     return (
-        <div className="flex w-screen h-screen">
+        <div className="flex w-screen h-screen overflow-x-hidden">
             <StudentSidebar />
             <div className='w-[85%]'>
                 <Topbar />
@@ -46,7 +48,9 @@ const StudentDashboard = () => {
                     </div>
                     <div className='w-4/12 ml-2'>
                         <TestCalender/>
+
                         
+
                     </div>
                 </div>
             </div>
