@@ -12,10 +12,10 @@ const ProfessorClasses = () => {
     //     return (<></>)
     // }
     const classes = [
-        { className: 'X-B Class', tutorName: 'Madona Bulia', grade: '7.5', performanceColor: 'bg-green-500' },
-        { className: 'X-B Class', tutorName: 'Madona Bulia', grade: '7.5', performanceColor: 'bg-yellow-500' },
-        { className: 'X-B Class', tutorName: 'Madona Bulia', grade: '7.5', performanceColor: 'bg-red-500' },
-        { className: 'X-B Class', tutorName: 'Madona Bulia', grade: '7.5', performanceColor: 'bg-green-500' },
+        { className: 'X-B Class'},
+        { className: 'X-B Class'},
+        { className: 'X-B Class'},
+        { className: 'X-B Class'},
     ];
 
     return (

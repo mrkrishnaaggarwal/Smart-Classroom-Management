@@ -49,8 +49,8 @@ const UploadPhoto = () => {
     };
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
+        <div className='flex flex-col p-4'>
+            <form onSubmit={handleSubmit} className='flex flex-col gap-1'>
                 <input type="file" onChange={handleFileChange} />
                 <button type="submit" className='bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-600 transition duration-300'>Upload Photo</button>
             </form>

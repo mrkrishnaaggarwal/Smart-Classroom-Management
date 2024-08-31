@@ -14,8 +14,9 @@ const ProfessorAttendence = () => {
       <ProfessorSidebar />
       <div className='w-[85%]'>
         <Topbar />
-        <div className='flex'>
+        <div className='flex items-center justify-evenly'>
             <FilterBar/>
+            <UploadPhoto/>
         </div>
       </div>
     </div>

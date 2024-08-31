@@ -1,6 +1,7 @@
 import React from 'react'
 import ProfessorSidebar from '../Components/ProfessorSidebar';
 import Topbar from '../Components/Topbar';
+import Publish from '../Components/Publish';
 
 const ProfessorDashboard = () => {
 
@@ -13,8 +14,9 @@ const ProfessorDashboard = () => {
     <ProfessorSidebar />
     <div className='w-[85%]'>
         <Topbar />
-        <div className='flex'>
-            ProfessorDashboard
+        <div className='flex mt-4'>
+            <Publish heading="Publish Announcement"/>
+            <Publish heading="Publish Homework"/>
         </div>
     </div>
 </div>
