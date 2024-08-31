@@ -6,6 +6,11 @@ import Sidebar from '../Components/ProfessorSidebar';
 import Topbar from '../Components/Topbar';
 
 const ProfessorMyProfile = () => {
+
+//   if(!localStorage.getItem("token")){
+//     console.log("you are not logged in");
+//     return (<></>)
+// }
     const [userData, setUserData] = useState(null);
     const [error, setError] = useState(null);
     

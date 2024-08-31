@@ -5,6 +5,10 @@ import UploadPhoto from '../Components/UploadPhoto';
 import FilterBar from '../Components/FilterBar';
 
 const ProfessorAttendence = () => {
+  // if(!localStorage.getItem("token")){
+  //   console.log("you are not logged in");
+  //   return (<></>)
+  // }
   return (
     <div className="flex w-screen h-screen">
       <ProfessorSidebar />
