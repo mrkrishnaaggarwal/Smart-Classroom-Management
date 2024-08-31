@@ -1,0 +1,18 @@
+/* styles.css or your stylesheet */
+@keyframes moveBackground {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 100% 0;
+    }
+  }
+  
+  .moving-background {
+    background-image: url('../assets/try2.jpeg'); /* Update the path as necessary */
+    background-size: cover; /* Ensure the image covers the entire container */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-position: 0 0; /* Start position for animation */
+    animation: moveBackground 30s linear infinite; /* Adjust the duration and direction as needed */
+  }
+  
