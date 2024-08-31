@@ -8,8 +8,14 @@ const Logout = () => {
     console.log(e);
   }
   return (
-    <div>
-      Logout
+    <div className="flex w-screen h-screen">
+      <Sidebar />
+      <div className='w-[85%]'>
+        <Topbar />
+        <div className='flex'>
+          Logout
+        </div>
+      </div>
     </div>
   )
 }

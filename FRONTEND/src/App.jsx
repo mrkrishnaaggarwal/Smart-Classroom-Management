@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Curriculum from './Pages/Curriculum';
 import StudentDashboard from './Pages/StudentDashboard';
 import Classes from './Pages/Classes';
-import Results from './Pages/Results';
+import StudentResults from './Pages/StudentResults';
 import Login from './Pages/Login/Login';
 import ProfessorDashboard from './Pages/ProfessorDashboard';
 import ProfessorCurriculum from './Pages/ProfessorCurriculum';
@@ -15,6 +15,7 @@ import Logout from './Pages/Logout';
 import StudentMyProfile from './Pages/StudentMyProfile';
 import ProfessorMyProfile from './Pages/ProfessorMyProfile';
 import ProfessorAttendence from './Pages/ProfessorAttendence';
+import StudentAnnouncements from './Pages/StudentAnnouncements';
 
 function App() {
   return (
@@ -29,14 +30,14 @@ function App() {
               <Route path="/Student/classes" element={<Classes />} />
               <Route path="/Professor/classes" element={<ProfessorClasses />} />
               <Route path="/Professor/attendence" element={<ProfessorAttendence />} />
-              <Route path="/Student/results" element={<Results />} />
+              <Route path="/Student/announcements" element={<StudentAnnouncements />} />
+              <Route path="/Student/results" element={<StudentResults />} />
               <Route path="/Professor/Results" element={<ProfessorResults />} />
               <Route path="/Student/myprofile" element={<StudentMyProfile />} />
               <Route path="/Professor/myprofile" element={<ProfessorMyProfile />} />
               <Route path="/settings" element={<Settings />} />
               <Route path="/help" element={<Help />} />
               <Route path="/logout" element={<Logout />} />
-              <Route path="/result" element={<Results />} />
             </Routes>
       </Router>
     </>

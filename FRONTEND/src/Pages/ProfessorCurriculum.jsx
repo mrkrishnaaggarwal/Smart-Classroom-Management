@@ -1,4 +1,6 @@
 import React from 'react'
+import ProfessorSidebar from '../Components/ProfessorSidebar';
+import Topbar from '../Components/Topbar';
 
 const ProfessorCurriculum = () => {
 
@@ -8,7 +10,7 @@ const ProfessorCurriculum = () => {
 // }
   return (
     <div className="flex w-screen h-screen">
-      <Sidebar />
+      <ProfessorSidebar />
       <div className='w-[85%]'>
         <Topbar />
         <div className='flex'>
@@ -19,4 +21,4 @@ const ProfessorCurriculum = () => {
   )
 }
 
-export default ProfessorCurriculum
+export default ProfessorCurriculum;
