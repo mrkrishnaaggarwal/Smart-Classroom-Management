@@ -1,0 +1,21 @@
+import React from 'react'
+import ProfessorSidebar from '../Components/ProfessorSidebar';
+import Topbar from '../Components/Topbar';
+import UploadPhoto from '../Components/UploadPhoto';
+import FilterBar from '../Components/FilterBar';
+
+const ProfessorAttendence = () => {
+  return (
+    <div className="flex w-screen h-screen">
+      <ProfessorSidebar />
+      <div className='w-[85%]'>
+        <Topbar />
+        <div className='flex'>
+            <FilterBar/>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default ProfessorAttendence

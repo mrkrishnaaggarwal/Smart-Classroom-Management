@@ -15,7 +15,7 @@ const StudentDashboard  =  () => {
             <StudentSidebar />
             <div className='w-[85%]'>
                 <Topbar />
-                <div className='flex'>
+                <div className='flex mt-4'>
                     <div className='w-8/12 mr-2'>
                         <Welcome />
                         <StatsCard/>

@@ -11,7 +11,7 @@ const Topbar = () => {
   
 
   return (
-    <div className="bg-white p-2 flex items-center justify-between max-h-fit mb-4 border-b-2 border-neutral-300">
+    <div className="bg-white p-2 flex items-center justify-between max-h-fit border-b-2 border-neutral-300">
       <div className="text-3xl font-bold text-blue-900">{capitalizedPageName}</div>
       <div className="flex w-1/5 items-center justify-between">
         <button className=''><BiMessageDetail style={{ height: '19px', width: '19px' }} /></button>
