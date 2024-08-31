@@ -14,17 +14,18 @@ const StudentMyProfile = () => {
         try {
             const response = await axios.get("http://localhost:3000/api/v1/student/myprofile", {
                 headers : {
-                    Authorization : "Bearer "+ localStorage.getItem(token)
+                    Authorization : "Bearer "+ localStorage.getItem("token")
                 }
             });
             setUserData(response.data);
-            console.log("hihihihiihihi");
+            console.log(response.data);
         } catch (e) {
             setError('Error fetching user data');
             console.error(e);
             
         }
       }
+      fetchUserData();
     },[]);
     
     

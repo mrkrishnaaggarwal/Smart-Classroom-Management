@@ -6,6 +6,11 @@ import Topbar from '../Components/Topbar';
 import UploadPhoto from '../Components/UploadPhoto';
 
 const ProfessorClasses = () => {
+
+    // if(!localStorage.getItem("token")){
+    //     console.log("you are not logged in");
+    //     return (<></>)
+    // }
     const classes = [
         { className: 'X-B Class', tutorName: 'Madona Bulia', grade: '7.5', performanceColor: 'bg-green-500' },
         { className: 'X-B Class', tutorName: 'Madona Bulia', grade: '7.5', performanceColor: 'bg-yellow-500' },

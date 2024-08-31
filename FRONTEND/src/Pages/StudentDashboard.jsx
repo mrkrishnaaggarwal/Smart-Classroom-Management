@@ -10,6 +10,11 @@ import StudentSidebar from '../Components/StudentSidebar';
 import Topbar from '../Components/Topbar';
 import {useState,useEffect} from 'react';
 const StudentDashboard  =  () => {
+
+    // if(!localStorage.getItem("token")){
+    //     console.log("you are not logged in");
+    //     return (<></>)
+    // }
     return (
         <div className="flex w-screen h-screen">
             <StudentSidebar />
