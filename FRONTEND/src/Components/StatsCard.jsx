@@ -5,6 +5,7 @@ const StatsCard = () => {
   const [percent, setPercent] = useState(0);
   const [attended, setAttended] = useState(0);
   const [total, setTotal] = useState(0);
+  const [performance, setPerformance] = useState(0);
 
   useEffect(() => {
     const fetchAttendance = async () => {
@@ -17,9 +18,27 @@ const StatsCard = () => {
         console.log(response.data);
         // Update state with the response data
         setPercent(response.data.percent);
-        console.log(response.data.present);
-        setAttended(response.data.present);
-        setTotal(response.data.total);
+        // console.log(response.data.totalClasses);
+        setAttended(response.data.totalPresent);
+        setTotal(response.data.totalClasses);
+      } catch (e) {
+        console.error(e);
+      }
+    };
+
+    fetchAttendance(); // Call the async function
+  }, []);
+  useEffect(() => {
+    const fetchAttendance = async () => {
+      try {
+        const response = await axios.get("http://localhost:3000/api/v1/student/examscores", {
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("token"),
+          },
+        });
+        console.log(response.data);
+        setPerformance(response.data.totalPerformanceIndex);
+
       } catch (e) {
         console.error(e);
       }
@@ -41,7 +60,7 @@ const StatsCard = () => {
       </div>
       <div className="bg-white p-6 rounded-lg shadow-md border-2 border-neutral-200 w-full">
         <h3 className="text-lg font-semibold">Exam Scores</h3>
-        <p className="text-2xl font-bold">225/300</p>
+        <p className="text-2xl font-bold">{performance}/500</p>
       </div>
     </div>
   );
