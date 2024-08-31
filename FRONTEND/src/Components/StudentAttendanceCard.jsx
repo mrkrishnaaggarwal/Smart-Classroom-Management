@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import React, { useState } from 'react';
 
 
-const StudentAttendenceCard = ({ name, rollNo, status }) => {
+const StudentAttendanceCard = ({ name, rollNo, status }) => {
     const [attendance, setAttendance] = useState(null);
     
     useEffect(() => {
@@ -54,4 +54,4 @@ const StudentAttendenceCard = ({ name, rollNo, status }) => {
     );
 };
 
-export default StudentAttendenceCard;
+export default StudentAttendanceCard;

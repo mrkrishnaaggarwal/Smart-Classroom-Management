@@ -29,7 +29,7 @@ const ProfessorSidebar = () => {
             <NavLink className={({ isActive }) => { return isActive ? "text-lg bg-neutral-200 px-2 py-1 rounded-lg text-[#6A2CFF] w-full flex items-center gap-2" : "text-lg hover:bg-gray-300 px-2 py-1 rounded-lg w-full flex items-center gap-2" }}  to={"/Professor/classes"}><AiOutlineSchedule />Classes</NavLink>
           </li>
           <li className="mb-2">
-            <NavLink className={({ isActive }) => { return isActive ? "text-lg bg-neutral-200 px-2 py-1 rounded-lg text-[#6A2CFF] w-full flex items-center gap-2" : "text-lg hover:bg-gray-300 px-2 py-1 rounded-lg w-full flex items-center gap-2" }}  to={"/Professor/attendence"}><CiBookmarkCheck />Attendence</NavLink>
+            <NavLink className={({ isActive }) => { return isActive ? "text-lg bg-neutral-200 px-2 py-1 rounded-lg text-[#6A2CFF] w-full flex items-center gap-2" : "text-lg hover:bg-gray-300 px-2 py-1 rounded-lg w-full flex items-center gap-2" }}  to={"/Professor/attendance"}><CiBookmarkCheck />Attendance</NavLink>
           </li>
           <li className="mb-2">
             <NavLink className={({ isActive }) => { return isActive ? "text-lg bg-neutral-200 px-2 py-1 rounded-lg text-[#6A2CFF] w-full flex items-center gap-2" : "text-lg hover:bg-gray-300 px-2 py-1 rounded-lg w-full flex items-center gap-2" }} to={"/Professor/results"}><BsFileEarmarkText />Results</NavLink>

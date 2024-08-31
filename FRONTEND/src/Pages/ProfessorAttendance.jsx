@@ -4,9 +4,9 @@ import Topbar from '../Components/Topbar';
 import UploadPhoto from '../Components/UploadPhoto';
 import FilterBar from '../Components/FilterBar';
 import ClassCard from '../Components/ClassCard';
-import StudentAttendenceCard from '../Components/StudentAttendenceCard';
+import StudentAttendanceCard from '../Components/StudentAttendanceCard';
 
-const ProfessorAttendence = () => {
+const ProfessorAttendance = () => {
     const [selectedClass, setSelectedClass] = useState(null);
     const [isVisible, setIsVisible] = useState(true);
     const closeDiv = () => {
@@ -14,10 +14,10 @@ const ProfessorAttendence = () => {
         setSelectedClass(null);
     };
     const classes = [
-        { className: 'X-B Class' },
-        { className: 'X-B Class' },
-        { className: 'X-B Class' },
-        { className: 'X-B Class' },
+        { className: 'CS-A Class' },
+        { className: 'CS-B Class' },
+        { className: 'IT-A Class' },
+        { className: 'ECE-A Class' },
     ];
 
     const attendance = [
@@ -53,7 +53,7 @@ const ProfessorAttendence = () => {
                         <button onClick={closeDiv} className="absolute top-2 right-2 text-gray-600 hover:text-black">&times;</button>
                         <h2 className="text-2xl font-bold mb-4">{selectedClass}</h2>
                         {attendance.map((item) => {
-                            return <StudentAttendenceCard 
+                            return <StudentAttendanceCard 
                                         name={"Student Name"} 
                                         rollNo={item[0]} 
                                         status={item[1]} 
@@ -67,4 +67,4 @@ const ProfessorAttendence = () => {
     );
 };
 
-export default ProfessorAttendence;
+export default ProfessorAttendance;

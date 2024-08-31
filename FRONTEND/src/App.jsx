@@ -14,7 +14,7 @@ import Help from './Pages/Help';
 import Logout from './Pages/Logout';
 import StudentMyProfile from './Pages/StudentMyProfile';
 import ProfessorMyProfile from './Pages/ProfessorMyProfile';
-import ProfessorAttendence from './Pages/ProfessorAttendence';
+import ProfessorAttendance from './Pages/ProfessorAttendance';
 import StudentAnnouncements from './Pages/StudentAnnouncements';
 
 function App() {
@@ -29,7 +29,7 @@ function App() {
               <Route path="/Professor/Curriculum" element={<ProfessorCurriculum />} />
               <Route path="/Student/classes" element={<Classes />} />
               <Route path="/Professor/classes" element={<ProfessorClasses />} />
-              <Route path="/Professor/attendence" element={<ProfessorAttendence />} />
+              <Route path="/Professor/attendance" element={<ProfessorAttendance />} />
               <Route path="/Student/announcements" element={<StudentAnnouncements />} />
               <Route path="/Student/results" element={<StudentResults />} />
               <Route path="/Professor/Results" element={<ProfessorResults />} />
