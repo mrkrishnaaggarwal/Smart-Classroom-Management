@@ -2,12 +2,17 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Curriculum from './Pages/Curriculum';
 import StudentDashboard from './Pages/StudentDashboard';
-import Sidebar from './Components/StudentSidebar';
 import Classes from './Pages/Classes';
 import Results from './Pages/Results';
-import Topbar from './Components/Topbar';
 import Login from './Pages/Login/Login';
 import ProfessorDashboard from './Pages/ProfessorDashboard';
+import ProfessorCurriculum from './Pages/ProfessorCurriculum';
+import ProfessorClasses from './Pages/ProfessorClasses';
+import ProfessorResults from './Pages/ProfessorResults';
+import MyProfile from './Pages/MyProfile';
+import Settings from './Pages/Settings';
+import Help from './Pages/Help';
+import Logout from './Pages/Logout';
 
 function App() {
   return (
