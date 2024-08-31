@@ -17,9 +17,12 @@ function App() {
               <Route path="/" element={<Login />} />
               <Route path="/Student/Dashboard" element={<StudentDashboard />} />
               <Route path="/Professor/Dashboard" element={<ProfessorDashboard />} />
-              <Route path="/curriculum" element={<Curriculum />} />
-              <Route path="/classes" element={<Classes />} />
-              <Route path="/results" element={<Results />} />
+              <Route path="/Studetn/curriculum" element={<Curriculum />} />
+              <Route path="/Professor/Curriculum" element={<ProfessorCurriculum />} />
+              <Route path="/Student/classes" element={<Classes />} />
+              <Route path="/Professor/Classes" element={<ProfessorClasses />} />
+              <Route path="/Student/results" element={<Results />} />
+              <Route path="/Professor/Results" element={<ProfessorResults />} />
             </Routes>
       </Router>
     </>

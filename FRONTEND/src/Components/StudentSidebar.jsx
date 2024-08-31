@@ -22,16 +22,16 @@ const StudentSidebar = () => {
             <NavLink className={({ isActive }) => { return isActive ? "text-lg bg-neutral-200 px-2 py-1 rounded-lg text-[#6A2CFF] w-full flex items-center gap-2" : "text-lg hover:bg-gray-300 px-2 py-1 rounded-lg w-full flex items-center gap-2" }} to={'/Student/Dashboard'}><RiHome3Line />Dashboard</NavLink>
           </li>
           <li className="mb-2">
-            <NavLink className={({ isActive }) => { return isActive ? "text-lg bg-neutral-200 px-2 py-1 rounded-lg text-[#6A2CFF] w-full flex items-center gap-2" : "text-lg hover:bg-gray-300 px-2 py-1 rounded-lg w-full flex items-center gap-2" }} to={'/curriculum'}><IoBarChartOutline />Curriculum</NavLink>
+            <NavLink className={({ isActive }) => { return isActive ? "text-lg bg-neutral-200 px-2 py-1 rounded-lg text-[#6A2CFF] w-full flex items-center gap-2" : "text-lg hover:bg-gray-300 px-2 py-1 rounded-lg w-full flex items-center gap-2" }} to={'/Student/curriculum'}><IoBarChartOutline />Curriculum</NavLink>
           </li>
           <li className="mb-2">
-            <NavLink className={({ isActive }) => { return isActive ? "text-lg bg-neutral-200 px-2 py-1 rounded-lg text-[#6A2CFF] w-full flex items-center gap-2" : "text-lg hover:bg-gray-300 px-2 py-1 rounded-lg w-full flex items-center gap-2" }}  to={"/classes"}><AiOutlineSchedule />Classes</NavLink>
+            <NavLink className={({ isActive }) => { return isActive ? "text-lg bg-neutral-200 px-2 py-1 rounded-lg text-[#6A2CFF] w-full flex items-center gap-2" : "text-lg hover:bg-gray-300 px-2 py-1 rounded-lg w-full flex items-center gap-2" }}  to={"/Student/classes"}><AiOutlineSchedule />Classes</NavLink>
           </li>
           <li className="mb-2">
-            <NavLink className={({ isActive }) => { return isActive ? "text-lg bg-neutral-200 px-2 py-1 rounded-lg text-[#6A2CFF] w-full flex items-center gap-2" : "text-lg hover:bg-gray-300 px-2 py-1 rounded-lg w-full flex items-center gap-2" }} to={"/results"}><BsFileEarmarkText />Results</NavLink>
+            <NavLink className={({ isActive }) => { return isActive ? "text-lg bg-neutral-200 px-2 py-1 rounded-lg text-[#6A2CFF] w-full flex items-center gap-2" : "text-lg hover:bg-gray-300 px-2 py-1 rounded-lg w-full flex items-center gap-2" }} to={"/Student/results"}><BsFileEarmarkText />Results</NavLink>
           </li>
           <li className="mb-2">
-            <NavLink className={({ isActive }) => { return isActive ? "text-lg bg-neutral-200 px-2 py-1 rounded-lg text-[#6A2CFF] w-full flex items-center gap-2" : "text-lg hover:bg-gray-300 px-2 py-1 rounded-lg w-full flex items-center gap-2" }} to={"/profile"}><CgProfile />My Profile</NavLink>
+            <NavLink className={({ isActive }) => { return isActive ? "text-lg bg-neutral-200 px-2 py-1 rounded-lg text-[#6A2CFF] w-full flex items-center gap-2" : "text-lg hover:bg-gray-300 px-2 py-1 rounded-lg w-full flex items-center gap-2" }} to={"/Student/profile"}><CgProfile />My Profile</NavLink>
           </li>
         </ul>
       </nav>
