@@ -36,6 +36,7 @@ function App() {
               <Route path="/settings" element={<Settings />} />
               <Route path="/help" element={<Help />} />
               <Route path="/logout" element={<Logout />} />
+              <Route path="/result" element={<Results />} />
             </Routes>
       </Router>
     </>
