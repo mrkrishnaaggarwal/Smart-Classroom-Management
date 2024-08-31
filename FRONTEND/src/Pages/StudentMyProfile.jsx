@@ -18,9 +18,11 @@ const StudentMyProfile = () => {
                 }
             });
             setUserData(response.data);
+            console.log("hihihihiihihi");
         } catch (e) {
             setError('Error fetching user data');
             console.error(e);
+            
         }
       }
     },[]);
