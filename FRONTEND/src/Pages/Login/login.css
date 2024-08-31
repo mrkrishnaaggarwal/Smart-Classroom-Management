@@ -1,0 +1,19 @@
+@keyframes backgroundShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.bg-animate {
+    @apply bg-cover bg-center bg-no-repeat;
+    background-size: 200%;
+    animation: backgroundShift 15s ease infinite;
+}
