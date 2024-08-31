@@ -17,7 +17,7 @@ const ProfessorAttendance = () => {
         { className: 'CS-A Class' },
         { className: 'CS-B Class' },
         { className: 'IT-A Class' },
-        { className: 'ECE-A Class' },
+        { className: 'ECE-A Class' }
     ];
 
     const attendance = [
