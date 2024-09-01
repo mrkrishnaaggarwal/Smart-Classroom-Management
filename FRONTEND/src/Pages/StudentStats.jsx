@@ -1,15 +1,24 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import StudentSidebar from '../Components/StudentSidebar';  // Adjust the import path as needed
 import Topbar from '../Components/Topbar';          // Adjust the import path as needed
+import axios from 'axios';
 
 const StudentStats = () => {
   // Example data stored in a Map. In a real scenario, this would come from a database.
-  const [attendanceData] = useState(new Map([
-    ['Mathematics', { totalClasses: 50, attendedClasses: 45, performance: '90%', marks: 85, totalMarks: 100 }],
-    ['Physics', { totalClasses: 40, attendedClasses: 35, performance: '87.5%', marks: 80, totalMarks: 100 }],
-    ['Chemistry', { totalClasses: 45, attendedClasses: 40, performance: '88.9%', marks: 82, totalMarks: 100 }],
-    ['Biology', { totalClasses: 30, attendedClasses: 27, performance: '90%', marks: 88, totalMarks: 100 }],
-  ]));
+  const [Data, setData] = useState([]);
+  useEffect(() => {
+    console.log("hi");
+    const fetchResult = async () => {
+      const response = await axios.get("http://localhost:3000/api/v1/student/seeStats", {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token")
+        }
+      });
+      console.log(response.data.stats);
+      setData(response.data.stats);
+    }
+    fetchResult();
+  }, []);
 
   return (
     <div className="flex w-screen h-screen">
@@ -31,20 +40,18 @@ const StudentStats = () => {
               </tr>
             </thead>
             <tbody>
-              {Array.from(attendanceData.entries()).map(([subject, { totalClasses, attendedClasses, performance, marks, totalMarks }]) => {
-                const attendancePercentage = ((attendedClasses / totalClasses) * 100).toFixed(2) + '%';
-
+              {Data.map((item, index) => {
                 return (
-                  <tr key={subject}>
-                    <td className='border-b p-2 text-center'>{subject}</td>
-                    <td className='border-b p-2 text-center'>{attendedClasses}</td>
-                    <td className='border-b p-2 text-center'>{totalClasses}</td>
-                    <td className='border-b p-2 text-center'>{attendancePercentage}</td>
-                    <td className='border-b p-2 text-center'>{marks}</td>
-                    <td className='border-b p-2 text-center'>{totalMarks}</td>
-                    <td className='border-b p-2 text-center'>{performance}</td>
+                  <tr key={index}>
+                    <td className='border-b p-2 text-center'>{item[0]}</td>
+                    <td className='border-b p-2 text-center'>{item[2]}</td>
+                    <td className='border-b p-2 text-center'>{item[3]}</td>
+                    <td className='border-b p-2 text-center'>{parseInt(item[2]/item[3]*100)+"%"}</td>
+                    <td className='border-b p-2 text-center'>{item[1]}</td>
+                    <td className='border-b p-2 text-center'>100</td>
+                    <td className='border-b p-2 text-center'>{parseInt(item[1])+"%"}</td>
                   </tr>
-                );
+                )
               })}
             </tbody>
           </table>
