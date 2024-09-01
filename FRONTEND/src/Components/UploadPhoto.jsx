@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const UploadPhoto = () => {
+const UploadPhoto = ({props}) => {
     const [file, setFile] = useState(null);
     const [uploadStatus, setUploadStatus] = useState('');
-
+    console.log(props);
     const handleFileChange = (e) => {
         setFile(e.target.files[0]);
     };
@@ -36,6 +36,7 @@ const UploadPhoto = () => {
             //     image: base64Image
             // }, 
             // )
+            console.log("before first backend call")
             const response = await fetch('http://localhost:3000/api/v1/professor/attendance', {
                 method: 'POST',
                 headers: {
@@ -43,12 +44,13 @@ const UploadPhoto = () => {
                     'Authorization': `Bearer ` + localStorage.getItem("token")
                 },
                 body: JSON.stringify({
-                    image: base64Image
+                    image: base64Image,
+                    sub : props
                 })
             });
             const data = await response.json(); 
             console.log(data);
-
+            console.log("before first backend call")
             setUploadStatus('Upload successful!');
             // console.log('Upload successful!', response.data);
         } catch (error) {
@@ -70,3 +72,6 @@ const UploadPhoto = () => {
 };
 
 export default UploadPhoto;
+
+
+

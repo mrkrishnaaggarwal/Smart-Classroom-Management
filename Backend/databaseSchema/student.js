@@ -17,7 +17,7 @@ const studentSchema = new mongoose.Schema({
     Blood: { type: String, required: true },
     Father: { type: String, required: true },
     FatherNumber: { type: Number, required: true },
-    Occupation: { type: Number, required: true },
+    Occupation: { type: String, required: true },
     PreviousTerm: { type: Number, required: true },
     stats: {
         type: [[mongoose.Schema.Types.Mixed]],  // Array of arrays with mixed types (numbers and strings)
@@ -25,10 +25,10 @@ const studentSchema = new mongoose.Schema({
             validator: function(arr) {
                 return arr.every(innerArr => 
                     innerArr.length === 4 &&         // Ensure there are 4 members in each inner array
-                    typeof innerArr[0] === 'string'  && // Fourth element should be a string
-                    typeof innerArr[1] === 'number'  &&// First three elements should be numbers
-                    typeof innerArr[2] === 'number' &&
-                    typeof innerArr[3] === 'number' 
+                    typeof innerArr[0] === 'string'  && // Subject
+                    typeof innerArr[1] === 'number'  &&// Performance
+                    typeof innerArr[2] === 'number' && //classes attended
+                    typeof innerArr[3] === 'number' //total classes
                 );
             },
             message: 'Each inner array must contain exactly 3 numbers followed by 1 string.'
