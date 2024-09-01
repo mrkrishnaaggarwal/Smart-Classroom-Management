@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import StatsCard from '../Components/StatsCard';
 import Overview from '../Components/Overview';
-import Classe from '../Components/Class';
 import Welcome from '../Components/Welcome';
 import TestCalender from '../Components/TestCalender';
 import StudentSidebar from '../Components/StudentSidebar';

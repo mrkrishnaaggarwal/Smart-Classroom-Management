@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import StudentSidebar from '../Components/StudentSidebar';
 import Topbar from '../Components/Topbar';
 import ResultCard from '../Components/ResultCard'; // Import the ResultCard component
+import axios from 'axios';
 
 const Results = () => {
   // Example data for results
@@ -10,7 +11,19 @@ const Results = () => {
     { code: 'PHY252', subjectTitle: 'Physics', creditPoint: '4.0', grade: 'B', obtainedMarks: '075', maxMarks: '100' },
     // Add more subjects as needed
   ];
-
+  const [result,setResult] = useState([]);
+  useEffect(()=>{
+    const fetchResult =async ()=>{
+      const response = await axios.get("http://localhost:3000/api/v1/student/results",{
+      headers : {
+        Authorization : "Bearer " + localStorage.getItem("token")
+      }
+    });
+    console.log(response.data.results);
+    setResult(response.data.results);
+  }
+  fetchResult();
+},[]);
   // Pass/Fail status
   const passStatus = 'Pass'; // This can be dynamically determined based on the resultsData
 
@@ -40,7 +53,7 @@ const Results = () => {
           </div>
           {/* ResultCard component */}
           <div className='w-full mt-4'>
-            <ResultCard results={resultsData} passStatus={passStatus} /> {/* Pass results and passStatus as props */}
+            <ResultCard results={result} />
           </div>
         </div>
       </div>
