@@ -39,7 +39,7 @@ const StudentDashboard = () => {
         <div className="flex w-screen h-screen overflow-x-hidden">
             <StudentSidebar />
             <div className='w-[85%]'>
-                <Topbar />
+                <Topbar props = {"Student"}/>
                 <div className='flex mt-4'>
                     <div className='w-8/12 mr-2'>
                         <Welcome name={profile} /> {/* Passing the profile name as a prop */}

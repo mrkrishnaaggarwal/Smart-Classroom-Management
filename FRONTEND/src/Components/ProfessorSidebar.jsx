@@ -41,7 +41,7 @@ const ProfessorSidebar = () => {
       </nav>
       <div className='flex flex-col justify-between flex-1 w-4/5 min-w-fit'>
         <div>
-          <NavLink className={({ isActive }) => { return isActive ? "text-lg bg-neutral-200 px-2 py-1 rounded-lg text-[#6A2CFF] w-full flex items-center gap-2" : "text-lg hover:bg-gray-300 px-2 py-1 rounded-lg w-full flex items-center gap-2" }} to={"/settings"}><IoSettingsOutline />Settings</NavLink>
+          {/* <NavLink className={({ isActive }) => { return isActive ? "text-lg bg-neutral-200 px-2 py-1 rounded-lg text-[#6A2CFF] w-full flex items-center gap-2" : "text-lg hover:bg-gray-300 px-2 py-1 rounded-lg w-full flex items-center gap-2" }} to={"/settings"}><IoSettingsOutline />Settings</NavLink> */}
         </div>
         <div>
           <NavLink className={({ isActive }) => { return isActive ? "text-base bg-neutral-200 px-2 py-1 rounded-lg text-[#6A2CFF] w-full flex items-center gap-2" : "text-base hover:bg-gray-300 px-2 py-1 rounded-lg w-full flex items-center gap-2" }} to={"/help"}><IoHelpCircleOutline />Help</NavLink>

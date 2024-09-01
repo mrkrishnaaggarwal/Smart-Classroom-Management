@@ -1,7 +1,7 @@
 import { FaChevronDown } from 'react-icons/fa';
 import { useState,useEffect } from 'react';
 import axios from 'axios';
-const TopbarLogin = () => {
+const TopbarLogin = ({prop}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [imageData, setImageData] = useState('');
   const [name, setName] = useState('');
@@ -10,7 +10,7 @@ const TopbarLogin = () => {
     const fetchImage = async () => {
       try {
         console.log(localStorage.getItem("token"));
-        const response = await axios.get('http://localhost:3000/api/v1/student/myprofile',{
+        const response = await axios.get(`http://localhost:3000/api/v1/${prop}/myprofile`,{
           headers :{
             Authorization : "Bearer " + localStorage.getItem("token")
           },

@@ -25,23 +25,26 @@ router.post('/login', async (req, res) => {
       res.status(500).json({ error: 'Internal server error' });
   }
 });
-// router.get('/myprofile',authProf, async (req, res) => {
-//   try{
-//   console.log(req.id);
-//   const data = await Professor.findOne({
-//     _id: req.id
-//   })
-//   if (!data) {
-//     return res.status(404).json({ error: 'Profile not found' });
-//   }
-//   console.log(data);
-//   res.json({
-//     data
-//   })}
-//   catch (error) {
-//     res.status(500).json({ error: error.message });
-//   }
-// });
+router.get('/myprofile',authProf, async (req, res) => {
+  try{
+  console.log(req.id);
+  const data = await Professor.findOne({
+    _id: req.id
+  })
+  if (!data) {
+    return res.status(404).json({ error: 'Profile not found' });
+  }
+  // const file = {
+  //   data : data
+  // }
+  console.log(data);
+  res.json({
+    data
+  })}
+  catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
 
 // router.post("/manualattendance",authProf,async(req,res)=>{
 //   const body = req.body;
@@ -84,83 +87,95 @@ router.post('/login', async (req, res) => {
 //     }
 //   });
 
-// //photo attendance route
-// router.post("/attendance",  async (req, res) => {
-//   const { image } = req.body;
+//photo attendance route
+router.post("/attendance",  async (req, res) => {
+  const { image,sub } = req.body;
 
-//     // Making the axios request to the external service
-//   //   try {
-//   //     const response = await axios.post(
-//   //       'https://913d-34-67-182-191.ngrok-free.app/search_faces',
-//   //       { image: image }, // Sending the image as part of the request body
-//   //       {
-//   //         headers: {
-//   //           'Content-Type': 'application/json' // Ensure the content type is JSON
-//   //         }
-//   //       }
-//   //     );
+    // Making the axios request to the external service
+  //   try {
+  //     const response = await axios.post(
+  //       'https://913d-34-67-182-191.ngrok-free.app/search_faces',
+  //       { image: image }, // Sending the image as part of the request body
+  //       {
+  //         headers: {
+  //           'Content-Type': 'application/json' // Ensure the content type is JSON
+  //         }
+  //       }
+  //     );
   
-//   //   console.log(response);
-//   // }
-//     const response = await fetch('https://913d-34-67-182-191.ngrok-free.app/search_faces', {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json' // Set content type to JSON
-//       },
-//       body: JSON.stringify({ image: image }) // Convert the body to JSON string
-//     });
-//     const data = await response.json(); // Parse the JSON response
-//     console.log(data); // Handle the response data
-  
+  //   console.log(response);
+  // }
+  console.log("Call to Ml model");
+    const response = await fetch('https://3604-35-230-186-130.ngrok-free.app/search_faces', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json' // Set content type to JSON
+      },
+      body: JSON.stringify({ image: image }) // Convert the body to JSON string
+    });
+    const data = await response.json(); // Parse the JSON response
+    console.log("Call to ML complete");
+    console.log(data); // Handle the response data
+    
 
-//   // if (!response || !Array.isArray(response.data)) {
-//   //   return res.status(400).json({ message: "Invalid response from external service" });
-//   // }
+                                                                                          // if (!response || !Array.isArray(response.data)) {
+                                                                                          //   return res.status(400).json({ message: "Invalid response from external service" });
+                                                                                          // }
 
-//   const rollNumbers = data;
-//     console.log(rollNumbers);
-//   try {
-//     // Looping through the roll numbers and processing each student
-//     for (let i = 0; i < rollNumbers.rollNo.length; i++) {
-//       // Extract roll number and attendance status
-//       const [filename, status] = rollNumbers.rollNo[i];
-//       const rollNumber = parseInt(filename.split('.').at(0)); // Extract roll number from filename
+  const rollNumbers = data;
+  // const rollNumbers = {
+  //   rollNo : [
+  //     ["123103001.jpg",1], //46/50
+  //     ["123103002.jpg",0], //10/50
+  //     ["123103003.jpg",1], //7/50
+  //     ["123103004.jpg",0] //18/50
+  //   ]
+  // }
+    console.log(rollNumbers);
+  try {
+    // Looping through the roll numbers and processing each student
+    for (let i = 0; i < rollNumbers.rollNo.length; i++) {
+      // Extract roll number and attendance status
+      const [filename, status] = rollNumbers.rollNo[i];
+      const rollNumber = parseInt(filename.split('.').at(0)); // Extract roll number from filename
+      
+      console.log(`Processing roll number: ${rollNumber}`);
     
-//       console.log(`Processing roll number: ${rollNumber}`);
+      // Find the student by roll number
+      const student = await Student.findOne({ rollNo: rollNumber });
+      console.log(`Student found:`, student);
     
-//       // Find the student by roll number
-//       const student = await Student.findOne({ rollNo: rollNumber });
-//       console.log(`Student found:`, student);
-    
-//       if (!student) {
-//         console.log(`Student with roll number ${rollNumber} not found.`);
-//         continue; // Skip to the next iteration if the student isn't found
-//       }
-    
-//       console.log(`Current attendance for student ${rollNumber}:`, student.attendance);
-    
-//       // Update attendance based on status
-//       if (status === 1) {
-//         student.attendance.subject[0] += 1; // Assuming subject[0] is for a specific subject
-//         student.attendance.subject[1] += 1; // Assuming subject[1] is for a different subject
-//       } else if (status === 0) {
-//         student.attendance.subject[1] += 1; // Assuming subject[1] is for a different subject
-//       }
-    
-//       // Save the updated student record
-//       await student.save();
-//     }
-    
-//     console.log("Attendance processing complete.");
-    
-//     // Sending a single response after processing all students
-//     res.json({ message: "Attendance saved" });
+      if (!student) {
+        // console.log(`Student with roll number ${rollNumber} not found.`);
+        continue; // Skip to the next iteration if the student isn't found
+      }
+                                                                                  
+      let subjectIndex = student.stats.findIndex(subject => subject[0] === sub);
 
-//   } catch (e) {
-//     console.error('Error processing attendance:', e);
-//     res.status(500).json({ message: "Server error" });
-//   }
-// });
+      if (subjectIndex !== -1) { // Ensure subject is found
+          if (status === 1) {
+              student.stats[subjectIndex][2] += 1; // Increase attended classes
+              student.stats[subjectIndex][3] += 1; // Increase attended classes
+
+          } else if (status === 0) {
+              student.stats[subjectIndex][3] += 1; // Increase missed classes
+      }
+}
+    
+      // Save the updated student record
+      await student.save();
+    }
+    
+    console.log("Attendance processing complete.");
+    
+    // Sending a single response after processing all students
+    res.json({ message: "Attendance saved" });
+
+  } catch (e) {
+    console.error('Error processing attendance:', e);
+    res.status(500).json({ message: "Server error" });
+  }
+});
 
 
 module.exports = router;
